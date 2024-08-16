@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Nunito } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
-import { SessionProvider } from "next-auth/react";
+
 import SessionWrapper from "@/components/session-wrapper";
 import { Toaster } from "@/components/ui/toaster";
 

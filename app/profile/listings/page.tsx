@@ -19,10 +19,13 @@ export default async function page() {
 
   return (
     <div className="flex min-h-screen flex-col items-start justify-start px-4 py-24 lg:px-10">
+      <h1 className="text-3xl text-secondary dark:text-primary lg:text-4xl">
+        My Listing
+      </h1>
       <div className="flex w-full items-center justify-end">
         <Link
           href={"/profile/listings/add-place"}
-          className="rounded-lg bg-primary px-4 py-2 text-primary-foreground transition duration-300 hover:bg-secondary hover:text-secondary-foreground"
+          className="rounded-lg bg-primary px-4 py-2 text-foreground transition duration-300 hover:bg-secondary hover:text-secondary-foreground"
         >
           Add New Place
         </Link>

@@ -17,11 +17,11 @@ export default function Page() {
 
   return (
     <div className="flex min-h-screen w-full flex-col items-start justify-start gap-24 px-4 py-24 lg:flex-row lg:px-24">
-      <div className="flex w-full flex-col gap-2 lg:w-1/2">
+      <div className="flex w-full flex-col gap-4 lg:w-1/2 lg:gap-2">
         <h2 className="border-b-[1px] border-gray-300 py-4 text-3xl font-semibold lg:text-4xl">
           Confirm and Pay
         </h2>
-        <div className="flex flex-col gap-6 border-b-[1px] border-gray-300 py-4">
+        <div className="flex flex-col gap-2 border-b-[1px] border-gray-300 py-4 lg:gap-6">
           <h3 className="text-2xl font-semibold lg:text-3xl">Your Trip</h3>
           <div className="grid w-full grid-cols-2 grid-rows-2">
             <p className="font-semibold">From</p>
