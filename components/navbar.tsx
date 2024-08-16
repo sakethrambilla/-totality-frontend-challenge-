@@ -19,7 +19,7 @@ export default function Navbar() {
           Explore
         </Link>
       </div>
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-2 lg:gap-6">
         <User />
         <Cart />
         <ThemeSwitch />

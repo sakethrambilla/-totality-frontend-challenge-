@@ -39,14 +39,14 @@ export default function User() {
     return (
       <DropdownMenu>
         <DropdownMenuTrigger className="">
-          <div className="flex items-center gap-2 rounded-full border px-4 py-2 ring-background dark:border-primary">
+          <div className="flex items-center gap-2 rounded-full border px-2 py-1 ring-background dark:border-primary lg:px-4 lg:py-2">
             <Menu />
             <Image
               src={data.user?.image as string}
               alt="User profile"
               width={30}
               height={30}
-              className="rounded-full"
+              className="h-full w-[20px] rounded-full lg:w-[30px]"
             />
           </div>
         </DropdownMenuTrigger>
