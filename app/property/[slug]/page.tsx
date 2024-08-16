@@ -19,27 +19,27 @@ export default async function page({ params }: { params: { slug: string } }) {
   const unavailableDates = await AvailabilityCheck(data?.id as string);
 
   return (
-    <div className="min-w-screen flex h-full min-h-screen flex-col items-start justify-start gap-8 p-24">
-      <h1 className="w-full text-left text-4xl text-primary transition duration-300 hover:text-secondary">
+    <div className="min-w-screen flex h-full min-h-screen flex-col items-start justify-start gap-8 px-4 py-24 lg:p-24">
+      <h1 className="w-full text-left text-2xl text-primary transition duration-300 hover:text-secondary lg:text-4xl">
         {data?.title}
       </h1>
 
-      <div className="grid h-full w-full grid-cols-2 grid-rows-1 items-start justify-start gap-1 overflow-hidden rounded-2xl">
+      <div className="grid h-full w-full grid-cols-1 items-start justify-start gap-8 overflow-hidden rounded-2xl lg:grid-cols-2 lg:grid-rows-1 lg:gap-1">
         <Image
           src={data?.images[0] as string}
           alt="Cover Image"
           width={100}
           height={100}
-          className="h-[600px] w-full object-cover"
+          className="w-full rounded-xl object-cover lg:h-[600px] lg:rounded-none"
           unoptimized
         />
-        <div className="grid h-full w-full grid-cols-2 grid-rows-2 flex-wrap gap-2">
+        <div className="grid h-full w-full grid-cols-1 flex-wrap gap-8 lg:grid-cols-2 lg:grid-rows-2 lg:gap-2">
           <Image
             src={data?.images[1] as string}
             alt="Cover Image"
             width={100}
             height={100}
-            className="h-full w-full object-cover"
+            className="h-full w-full rounded-xl object-cover lg:rounded-none"
             unoptimized
           />
           <Image
@@ -47,7 +47,7 @@ export default async function page({ params }: { params: { slug: string } }) {
             alt="Cover Image"
             width={100}
             height={100}
-            className="h-full w-full object-cover"
+            className="h-full w-full rounded-xl object-cover lg:rounded-none"
             unoptimized
           />
           <Image
@@ -55,7 +55,7 @@ export default async function page({ params }: { params: { slug: string } }) {
             alt="Cover Image"
             width={100}
             height={100}
-            className="h-full w-full object-cover"
+            className="h-full w-full rounded-xl object-cover lg:rounded-none"
             unoptimized
           />
           <Image
@@ -68,7 +68,7 @@ export default async function page({ params }: { params: { slug: string } }) {
           />
         </div>
       </div>
-      <div className="flex w-full items-start justify-between">
+      <div className="flex w-full flex-col items-center justify-start gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-4">
         <div className="flex flex-col items-start justify-start gap-4">
           <p className="text-lg">{data?.description}</p>
           <div className="flex items-start justify-center gap-4 divide-x-2 text-sm">

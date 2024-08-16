@@ -15,14 +15,14 @@ export default async function page() {
   const user = session.user as TUser;
 
   return (
-    <div className="flex min-h-screen items-center justify-center">
-      <Card className="flex w-2/3 flex-col items-center justify-center border-secondary py-8 shadow-xl dark:border-primary">
+    <div className="flex min-h-screen items-center justify-center px-4 py-24 lg:p-0">
+      <Card className="flex w-full flex-col items-center justify-center rounded-3xl border-secondary py-8 shadow-xl dark:border-primary lg:w-2/3">
         <CardHeader>
           <CardTitle>Account Information</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col items-start justify-center gap-12 lg:flex-row">
-            <div className="flex w-2/3 flex-col items-start justify-center gap-8">
+            <div className="flex flex-col items-start justify-center gap-8 lg:w-2/3">
               <div className="flex flex-col items-start gap-2">
                 <p>Legal Name</p>
                 <p className="text-sm text-secondary dark:text-primary">

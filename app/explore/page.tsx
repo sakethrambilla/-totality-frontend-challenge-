@@ -20,11 +20,11 @@ export default async function page({
           Explore Properties
         </h1>
         <SearchBar />
-        <div className="flex w-full items-start justify-center gap-12 px-16">
+        <div className="flex w-full flex-col items-center justify-center gap-12 px-2 lg:flex-row lg:items-start lg:px-16">
           <FilterSystem />
-          <div className="flex w-4/5 flex-wrap items-center justify-start gap-6">
+          <div className="flex w-full flex-wrap items-center justify-center gap-6 lg:w-4/5 lg:justify-start">
             {propertyData.length == 0 || propertyData == null ? (
-              <div className="flex w-full items-center justify-center text-4xl text-primary">
+              <div className="lg:items- flex w-[90%] items-center justify-center text-center text-2xl text-primary lg:w-full lg:text-4xl">
                 No property is listed at this location
               </div>
             ) : (

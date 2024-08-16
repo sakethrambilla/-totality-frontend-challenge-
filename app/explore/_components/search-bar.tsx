@@ -30,7 +30,7 @@ export default function SearchBar() {
   }, 300);
 
   return (
-    <div className="flex w-2/3 items-center justify-between rounded-full px-8 py-4 shadow-xl">
+    <div className="flex w-[90%] items-center justify-between rounded-full px-4 py-4 shadow-xl lg:w-2/3 lg:px-8">
       <div className="flex flex-col items-start justify-center gap-0 px-4">
         <p className="text-sm font-semibold">Where</p>
         <input

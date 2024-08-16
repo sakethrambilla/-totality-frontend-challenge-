@@ -1,4 +1,3 @@
-import { TBooking } from "@/types";
 import { formatDate } from "date-fns";
 import React from "react";
 
@@ -11,11 +10,10 @@ export default function BookingCard({
 }) {
   return (
     <div
-      key={key}
-      className="flex w-full items-center justify-between gap-8 rounded-xl px-4 py-8 shadow-lg"
+      key={booking.id}
+      className="flex w-full flex-col items-start justify-between gap-8 rounded-xl px-4 py-8 shadow-lg lg:flex-row lg:items-center"
     >
-      <div className="flex items-center gap-4">
-        <p>{key + 1}</p>
+      <div className="flex flex-col items-start gap-4 lg:flex-row lg:items-center">
         <h3 className="text-lg font-semibold text-secondary dark:text-primary">
           {booking.property.title} in {booking.property.City}
         </h3>

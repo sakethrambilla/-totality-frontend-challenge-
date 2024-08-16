@@ -10,7 +10,7 @@ export default function PropertyCard({ data }: { data: TProperty }) {
   const { push } = useRouter();
 
   return (
-    <div className="0 flex h-fit w-64 flex-col gap-1 rounded-lg p-2">
+    <div className="flex h-96 w-[90%] flex-col items-start justify-start gap-1 rounded-lg p-2 lg:w-64">
       <Image
         src={data.images[0]}
         alt="Property Image"
@@ -32,7 +32,7 @@ export default function PropertyCard({ data }: { data: TProperty }) {
           <span className=""> {data.bedRooms} Bedrooms</span>
         </p>
       </div>
-      <div className="flex items-center justify-between gap-2">
+      <div className="flex w-full items-center justify-between gap-2">
         <p className="flex h-full items-center gap-2">
           <span className="font-bold">₹{data.price} </span>night
         </p>

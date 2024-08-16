@@ -18,7 +18,7 @@ export default async function page() {
   })) as TProperty[];
 
   return (
-    <div className="flex min-h-screen flex-col items-start justify-start px-10 py-24">
+    <div className="flex min-h-screen flex-col items-start justify-start px-4 py-24 lg:px-10">
       <div className="flex w-full items-center justify-end">
         <Link
           href={"/profile/listings/add-place"}

@@ -8,17 +8,20 @@ import React, { useEffect, useState } from "react";
 
 export default function FilterSystem() {
   const searchParams = useSearchParams();
-  const [bedroom, setBedroom] = useState([0]);
-  const [bathroom, setBathroom] = useState([0]);
+  const [bedroom, setBedroom] = useState(0);
+  const [bathroom, setBathroom] = useState(0);
   const params = new URLSearchParams(searchParams);
   const pathName = usePathname();
   const { replace } = useRouter();
   function handleFilters() {
+    params.set("bedroom", String(bedroom));
+    params.set("bathroom", String(bathroom));
     replace(`${pathName}?${params.toString()}`);
   }
+
   return (
-    <div className="flex min-h-60 w-40 flex-col gap-4">
-      <div className="flex w-full flex-col items-center justify-center gap-1">
+    <div className="flex min-h-60 w-full flex-col gap-8 px-8 lg:w-40 lg:px-0">
+      <div className="gap- flex w-full flex-col items-center justify-center">
         Price Range
         <div className="flex w-full items-center justify-between">
           <input
@@ -45,7 +48,6 @@ export default function FilterSystem() {
           step={1}
           onValueChange={(e: any) => {
             setBedroom(e[0]);
-            params.set("bedroom", e[0]);
           }}
         />
       </div>
@@ -59,13 +61,12 @@ export default function FilterSystem() {
           step={1}
           onValueChange={(e: any) => {
             setBathroom(e[0]);
-            params.set("bathroom", e[0]);
           }}
         />
       </div>
-      <div className="flex flex-col items-start justify-center gap-1">
+      <div className="gap- flex flex-col items-start justify-center">
         <p className="text-sm">Amenities</p>
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-6 lg:gap-4">
           <div className="flex items-center justify-center gap-2">
             <Checkbox
               onCheckedChange={(e: any) => {
@@ -76,7 +77,7 @@ export default function FilterSystem() {
           </div>
           <div className="flex items-center justify-center gap-2">
             <Checkbox
-              checked={Boolean(params.get("tv")) || false}
+              // checked={Boolean(params.get("tv")) || false}
               onCheckedChange={(e: any) => {
                 params.set("tv", e);
               }}
@@ -85,7 +86,6 @@ export default function FilterSystem() {
           </div>
           <div className="flex items-center justify-center gap-2">
             <Checkbox
-              checked={Boolean(params.get("washingMachine"))}
               onCheckedChange={(e: any) => {
                 params.set("washingMachine", e);
               }}
@@ -103,7 +103,6 @@ export default function FilterSystem() {
           </div>
           <div className="flex items-center justify-center gap-2">
             <Checkbox
-              checked={Boolean(params.get("airConditioning"))}
               onCheckedChange={(e: any) => {
                 params.set("airConditioning", e);
               }}

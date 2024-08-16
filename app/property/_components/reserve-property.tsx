@@ -1,6 +1,4 @@
 "use client";
-import { AvailabilityCheck } from "@/actions/availability-check";
-import { createOrder } from "@/actions/payment-integration";
 import { DatePickerWithRange } from "@/components/date-picker";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
@@ -9,10 +7,9 @@ import { usePaymentStore } from "@/store/payment-store";
 import { TCart, TProperty } from "@/types";
 import { addDays, differenceInDays } from "date-fns";
 import { useSession } from "next-auth/react";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { DateRange } from "react-day-picker";
-import { v4 as uuidv4 } from "uuid";
 
 export default function ReserveProperty({
   propertyData,

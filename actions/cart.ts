@@ -37,7 +37,7 @@ export async function handleCart(
   email: string,
 ) {
   "use server";
-  console.log(propertyId, email);
+
   const user = (await prisma.user.findFirst({
     where: {
       email: email,

@@ -10,10 +10,9 @@ export default function PropertyCard({
   property: TCart;
   key: number;
 }) {
-  console.log(property);
   return (
     <div
-      className="flex h-fit w-[30vw] flex-col gap-1 rounded-xl border-[1px] border-gray-300 p-4 shadow-sm"
+      className="flex h-fit w-full flex-col gap-1 rounded-xl border-[1px] border-gray-300 p-4 shadow-sm lg:w-[30vw]"
       key={key}
     >
       <div className="flex items-center justify-start gap-2 border-b-[1px] border-gray-300 py-4">
@@ -22,7 +21,7 @@ export default function PropertyCard({
           alt="Property Image"
           width={100}
           height={100}
-          className="rounded"
+          className="rounded object-cover"
         />
         <div className="flex flex-col items-start justify-start gap-1">
           <h3 className="font-semibold text-secondary dark:text-primary">

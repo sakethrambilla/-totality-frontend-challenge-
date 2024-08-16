@@ -18,21 +18,23 @@ export default function CartPropertyCard({
   return (
     <div
       key={key}
-      className="flex w-full flex-row items-center justify-between rounded-2xl px-8 py-4 shadow-lg"
+      className="flex w-full flex-col items-start justify-center gap-4 rounded-2xl px-4 py-4 shadow-lg lg:flex-row lg:items-center lg:justify-between lg:gap-0 lg:px-8"
     >
-      <div className="items center flex justify-center gap-12">
-        <Image
-          src={item.images[0]}
-          alt="Property image"
-          width={100}
-          height={100}
-          className="rounded-xl"
-        />
-        <div className="flex flex-col items-start justify-start gap-1">
-          <h3 className="text-lg text-secondary">
-            {item.title} in {item.City}
-          </h3>
-          <p className="text-sm">{item.description.substring(0, 60)}...</p>
+      <div className="flex flex-col items-start justify-center gap-4 lg:flex-row lg:items-center lg:gap-12">
+        <div className="flex flex-row gap-4">
+          <Image
+            src={item.images[0]}
+            alt="Property image"
+            width={100}
+            height={100}
+            className="rounded-xl object-cover"
+          />
+          <div className="flex flex-col items-start justify-start gap-1">
+            <h3 className="text-lg text-secondary dark:text-primary">
+              {item.title} in {item.City}
+            </h3>
+            <p className="text-sm">{item.description.substring(0, 60)}...</p>
+          </div>
         </div>
         <div className="flex flex-col items-center justify-start gap-1">
           <p>{item.bedRooms} BedRooms</p>
@@ -54,8 +56,8 @@ export default function CartPropertyCard({
           <p>Property Price : ₹ {item.price} </p>
         </div>
       </div>
-      <div className="flex items-center gap-8">
-        <p className="text-2xl font-semibold text-secondary">
+      <div className="flex w-full items-center justify-between gap-8 lg:w-fit lg:justify-start">
+        <p className="text-xl font-semibold text-secondary dark:text-primary lg:text-2xl">
           Total Price : ₹ {item.totalPrice}{" "}
         </p>
 

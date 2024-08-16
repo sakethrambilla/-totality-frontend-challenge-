@@ -15,15 +15,14 @@ export default function Page() {
   const numberOfDays = differenceInDays(dates.to as Date, dates.from as Date);
   const totalPrice = payment.total_price;
 
-  console.log(payment);
   return (
-    <div className="flex min-h-screen w-full items-start justify-start gap-24 p-24">
-      <div className="flex w-1/2 flex-col gap-2">
-        <h2 className="border-b-[1px] border-gray-300 py-4 text-4xl font-semibold">
+    <div className="flex min-h-screen w-full flex-col items-start justify-start gap-24 px-4 py-24 lg:flex-row lg:px-24">
+      <div className="flex w-full flex-col gap-2 lg:w-1/2">
+        <h2 className="border-b-[1px] border-gray-300 py-4 text-3xl font-semibold lg:text-4xl">
           Confirm and Pay
         </h2>
         <div className="flex flex-col gap-6 border-b-[1px] border-gray-300 py-4">
-          <h3 className="text-3xl font-semibold">Your Trip</h3>
+          <h3 className="text-2xl font-semibold lg:text-3xl">Your Trip</h3>
           <div className="grid w-full grid-cols-2 grid-rows-2">
             <p className="font-semibold">From</p>
             <p className="font-semibold">Till</p>
@@ -37,8 +36,8 @@ export default function Page() {
             <p>11:00 AM</p>
           </div>
         </div>
-        <div className="flex flex-col gap-6 border-b-[1px] border-gray-300 py-8">
-          <h3 className="text-3xl font-semibold">Pay with</h3>
+        <div className="flex flex-col gap-2 border-b-[1px] border-gray-300 py-8 lg:gap-6">
+          <h3 className="text-2xl font-semibold lg:text-3xl">Pay with</h3>
           <div className="flex items-center justify-center gap-2">
             <Input className="w-full" placeholder="XXXX XXXX XXXX XXXX" />
             <Image
@@ -54,8 +53,10 @@ export default function Page() {
             <Input placeholder="CVV" />
           </div>
         </div>
-        <div className="flex flex-col gap-6 border-b-[1px] border-gray-300 py-6">
-          <h3 className="text-3xl font-semibold">Required for your trip</h3>
+        <div className="flex flex-col gap-2 border-b-[1px] border-gray-300 py-6 lg:gap-6">
+          <h3 className="text-2xl font-semibold lg:text-3xl">
+            Required for your trip
+          </h3>
           <div className="flex w-full items-start justify-between">
             <div className="flex flex-col items-start justify-center">
               <p className="font-semibold">Phone Number</p>
@@ -67,14 +68,16 @@ export default function Page() {
             </Button>
           </div>
         </div>
-        <div className="flex flex-col gap-6 border-b-[1px] border-gray-300 py-4">
-          <h3 className="text-3xl font-semibold">Cancelation Policy</h3>
+        <div className="flex flex-col gap-2 border-b-[1px] border-gray-300 py-4 lg:gap-6">
+          <h3 className="text-2xl font-semibold lg:text-3xl">
+            Cancelation Policy
+          </h3>
           <p>
             This reservation is non-refundable.{" "}
             <span className="font-sembold underline">Learn more</span>
           </p>
         </div>
-        <div className="flex flex-col gap-6 border-b-[1px] border-gray-300 py-4">
+        <div className="flex flex-col gap-2 border-b-[1px] border-gray-300 py-4 lg:gap-6">
           <h3 className="text-3xl font-semibold">Ground Rules</h3>
           <p>
             We ask every guest to remember a few simple things about what makes

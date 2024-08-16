@@ -36,7 +36,6 @@ export default function User() {
       </Link>
     );
   } else {
-    console.log(data);
     return (
       <DropdownMenu>
         <DropdownMenuTrigger className="">

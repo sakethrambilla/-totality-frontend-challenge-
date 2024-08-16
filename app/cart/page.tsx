@@ -19,14 +19,14 @@ export default function Page() {
   let totalCartPrice = 0;
   cart.forEach((i) => (totalCartPrice += i.totalPrice));
   return (
-    <div className="flex flex-col items-start justify-start gap-6 p-24">
-      <h3 className="text-3xl font-semibold">Rental Cart</h3>
+    <div className="flex flex-col items-start justify-start gap-6 px-4 py-24 lg:p-24">
+      <h3 className="text-2xl font-semibold lg:text-3xl">Rental Cart</h3>
 
       {cart.map((item, index) => (
         <CartPropertyCard item={item} key={index} />
       ))}
 
-      <div className="flex w-full flex-col items-end justify-center gap-4 text-2xl">
+      <div className="flex w-full flex-col items-end justify-center gap-4 text-xl lg:text-2xl">
         <div className="items-cetner flex gap-4">
           <span className="font-semibold">{`Sub-total (${cart.length} Properties)  : `}</span>
           {totalCartPrice}.00

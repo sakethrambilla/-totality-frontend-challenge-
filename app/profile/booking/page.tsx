@@ -26,16 +26,16 @@ export default async function page() {
       },
     },
   });
-  console.log(myBookings);
+
   return (
-    <div className="flex min-h-screen w-full flex-col items-center justify-start gap-8 p-24">
+    <div className="flex min-h-screen w-full flex-col items-center justify-start gap-8 px-4 py-24 lg:px-24">
       <p className="text-4xl font-bold text-secondary dark:text-primary">
         My Bookings
       </p>
       <div className="flex w-full flex-col gap-4">
-        {myBookings.map((booking, index) => (
-          <BookingCard booking={booking} key={index} />
-        ))}
+        {myBookings.map((booking, index) => {
+          return <BookingCard booking={booking} key={index} />;
+        })}
       </div>
     </div>
   );
