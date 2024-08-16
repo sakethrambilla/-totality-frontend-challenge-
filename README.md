@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+#  Urban Stay : Property Booking Application
 
-First, run the development server:
+Welcome to the Property Booking Application! This project is a Next.js application designed to provide a seamless experience for users to book properties, similar to platforms like Airbnb. The application is built with modern web technologies, including Next.js, TypeScript, Prisma, and Neon, and features robust authentication and user management with NextAuth.js.
+
+## Features
+
+- **User Authentication** : Secure login with Google using NextAuth.js.
+- **Property Listings** : Browse and search for properties available for booking.
+- **Hotel Booking** : Easily book your desired property with a few clicks.
+- **Add to Cart** : Save properties to your cart for quick access and booking later.
+- **Profile Section** : Manage your profile details and preferences.
+- **My Bookings** : View and manage your bookings from a dedicated section.
+- **My Property Listings** : List your own properties and manage them from your profile.
+
+
+## Tech Stack
+Tyescript, NextJs, Zustand, TailwindCSS, Shadcn UI, NextAuth, Prisma ORM.
+
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+```
+GOOGLE_CLIENT_ID=""
+GOOGLE_CLIENT_SECRET=""
+NEXTAUTH_SECRET=""
+DATABASE_URL=""
+```
+## Run Locally
+
+Clone the project
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/sakethrambilla/totality-frontend-challenge
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Go to the project directory
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+  cd totality-frontend-challenge
+```
 
-## Learn More
+Install dependencies
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+  npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Start the server
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+  npm run dev
+```
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Deployment
+
+Project is deployed at: https://totality-frontend-challenge-1.vercel.app/
+
+
+## Screenshots
+
+<img title="a title" alt="Alt text" src="public/sample-images/1.png">
+<img title="a title" alt="Alt text" src="public/sample-images/2.png">
+<img title="a title" alt="Alt text" src="public/sample-images/3.png">
+<img title="a title" alt="Alt text" src="public/sample-images/4.png">
+<img title="a title" alt="Alt text" src="public/sample-images/5.png">
+<img title="a title" alt="Alt text" src="public/sample-images/6.png">
+<img title="a title" alt="Alt text" src="public/sample-images/7.png">
+
