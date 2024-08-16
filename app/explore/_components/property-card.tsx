@@ -21,7 +21,7 @@ export default function PropertyCard({ data }: { data: TProperty }) {
       />
       <div className="flex flex-col gap-0">
         <p className="">
-          {data.title} in {data.State}
+          {data.title} in {data.City}
         </p>
         <p className="text-xs">
           {data.description.substring(0, 40)}

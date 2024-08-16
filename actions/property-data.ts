@@ -39,6 +39,7 @@ export async function getPropertyData(searchParams: TSearchParams) {
       titleSlug: true,
       propertyType: true,
       State: true,
+      City: true,
       description: true,
       bedRooms: true,
       bathRooms: true,

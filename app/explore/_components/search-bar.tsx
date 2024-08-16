@@ -34,7 +34,7 @@ export default function SearchBar() {
       <div className="flex flex-col items-start justify-center gap-0 px-4">
         <p className="text-sm font-semibold">Where</p>
         <input
-          placeholder="Search destinations"
+          placeholder="Search destinations by City"
           type="text"
           className="w-52 text-gray-600 focus:outline-0 dark:bg-transparent"
           onChange={(e) => handleSearch(e.target.value)}
