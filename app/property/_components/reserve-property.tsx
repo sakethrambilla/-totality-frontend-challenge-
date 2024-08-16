@@ -75,29 +75,22 @@ export default function ReserveProperty({
       maxGuests: propertyData.maxGuests,
     };
 
-    if (status == "unauthenticated") {
+    setPayment("property_data", propertyData);
+    if (containsProperty(cartProperty, cart)) {
       toast({
-        title: "❌ Error: Not Signned In",
-        description: "Please Sign In to add to Cart the property. 😊",
+        title: "❌ Property already in the cart.",
+        description: "Property Already exits in your cart. 😊",
       });
     } else {
-      setPayment("property_data", propertyData);
-      if (containsProperty(cartProperty, cart)) {
-        toast({
-          title: "❌ Property already in the cart.",
-          description: "Property Already exits in your cart. 😊",
-        });
-      } else {
-        toast({
-          title: "✔️ Property added to cart.",
-        });
-        addCartProperty(cartProperty);
-      }
-      // handleCart(date, propertyData.id, data?.user?.email as string);
-      // addProperty()
-
-      // replace("/cart");
+      toast({
+        title: "✔️ Property added to cart.",
+      });
+      addCartProperty(cartProperty);
     }
+    // handleCart(date, propertyData.id, data?.user?.email as string);
+    // addProperty()
+
+    // replace("/cart");
   }
   return (
     <div className="flex flex-col items-start justify-start gap-4 rounded-2xl p-6 shadow-lg">
