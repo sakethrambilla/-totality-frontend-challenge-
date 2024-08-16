@@ -22,21 +22,21 @@ export default function SearchBar() {
   const handleSearch = useDebouncedCallback((place: string) => {
     const params = new URLSearchParams(searchParams);
     if (place) {
-      params.set("district", place);
+      params.set("city", place);
     } else {
-      params.delete("district");
+      params.delete("city");
     }
     replace(`${pathName}?${params.toString()}`);
   }, 300);
 
   return (
     <div className="flex w-[90%] items-center justify-between rounded-full px-4 py-4 shadow-xl lg:w-2/3 lg:px-8">
-      <div className="flex flex-col items-start justify-center gap-0 px-4">
+      <div className="flex w-full flex-col items-start justify-center gap-0 px-4">
         <p className="text-sm font-semibold">Where</p>
         <input
           placeholder="Search destinations by City"
           type="text"
-          className="w-52 text-gray-600 focus:outline-0 dark:bg-transparent"
+          className="w-full text-gray-600 focus:outline-0 dark:bg-transparent"
           onChange={(e) => handleSearch(e.target.value)}
           defaultValue={searchParams.get("district")?.toString()}
         />

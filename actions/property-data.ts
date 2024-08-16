@@ -3,7 +3,7 @@ import { TProperty, TSearchParams } from "@/types";
 
 export async function getPropertyData(searchParams: TSearchParams) {
   const {
-    district,
+    city,
     min: minPrice,
     max: maxPrice,
     wifi,
@@ -14,8 +14,8 @@ export async function getPropertyData(searchParams: TSearchParams) {
   } = searchParams;
 
   const whereClause: any = {};
-  if (district) {
-    whereClause.District = { startsWith: district, mode: "insensitive" };
+  if (city) {
+    whereClause.City = { startsWith: city, mode: "insensitive" };
   }
 
   if (minPrice || maxPrice) {

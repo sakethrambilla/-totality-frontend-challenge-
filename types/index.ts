@@ -40,7 +40,7 @@ export type TProperty = {
 };
 
 export type TSearchParams = {
-  district?: string;
+  city?: string;
   bedRoom?: string;
   bathRoom?: string;
   min?: string;
