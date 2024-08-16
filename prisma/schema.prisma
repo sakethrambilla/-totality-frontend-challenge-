@@ -1,0 +1,122 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+ 
+generator client {
+  provider = "prisma-client-js"
+}
+ 
+model User {
+  id            String          @id @default(cuid())
+  name          String?
+  email         String          @unique
+  emailVerified DateTime?
+  phoneNumber Int? @unique
+  emergencyNumber Int? 
+  governmentId String?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  property Property[]
+  reservation Booking[]
+}
+
+
+ 
+model Account {
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+ 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+ 
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+ 
+  @@id([provider, providerAccountId])
+}
+ 
+model Session {
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+ 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+ 
+model VerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
+ 
+  @@id([identifier, token])
+}
+ 
+
+
+model Property{
+  
+  id String @id @default(uuid())
+  userId String
+  user User @relation(fields: [userId],references: [id]) 
+  title String 
+  titleSlug String
+  description String
+  price Int
+  propertyType String
+  longitude Float
+  latitude Float
+  flatNumber String?
+  streetAddress String
+  District String
+  City String
+  State String 
+  pinCode Int 
+  maxGuests Int 
+  bedRooms Int 
+  bathRooms Int
+  wifi Boolean 
+  tv Boolean 
+  washingMachine Boolean
+  parking Boolean 
+  airConditioning Boolean
+  images String[]
+  bookings Booking[]
+  
+}
+
+model Booking {
+  id String @id @default(uuid())
+  startDate DateTime
+  endDate DateTime
+  transactionId String
+  userId String 
+  user User @relation(fields: [userId],references: [id])
+  amount Int @default(0)
+  propertyId String 
+  property Property @relation(fields: [propertyId],references: [id])
+  createdAt DateTime @default(now())
+  inCart Boolean @default(false)
+
+
+}

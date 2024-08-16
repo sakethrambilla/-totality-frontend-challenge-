@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "User" ALTER COLUMN "phNumber" DROP NOT NULL,
+ALTER COLUMN "emergencyNumber" DROP NOT NULL,
+ALTER COLUMN "governmentId" DROP NOT NULL;
